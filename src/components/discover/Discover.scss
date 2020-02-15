@@ -2,4 +2,36 @@
 
 .discover-wrapper {
     color: $basic-grey;
+
+    .centered-col {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    //Materialize override
+    // .chip {
+    //     font-size: 0.75rem;
+    //     padding: 0 6px;
+    //     display: inline-block;
+    //     height: 24px;
+    //     font-weight: 500;
+    //     color: rgba(0, 0, 0, 0.6);
+    //     line-height: 24px;
+    //     border-radius: 16px;
+    //     background-color: #e4e4e4;
+    //     margin-bottom: 5px;
+
+    //     .close {
+    //         line-height: 24px;
+    //         font-size: 14px;
+    //     }
+    // }
+    .add {
+        background: #f9f9f9;
+        border: 2px solid #cbcbcb;
+        .mdi {
+            margin-left: 0.5rem;
+        }
+    }
 }
