@@ -16,7 +16,7 @@ function Discover() {
             <div className="row">
                 <div className="col s12 centered-col">
                     {mockChips.map(c => (
-                        <div className="chip">
+                        <div key={c} className="chip">
                             {c}
                             <i className="close material-icons">close</i>
                         </div>
