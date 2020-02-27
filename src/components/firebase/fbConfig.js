@@ -3,7 +3,7 @@ import "firebase/firestore";
 import "firebase/auth";
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: process.env.REACT_APP_APIKEY,
     authDomain: "smart-heart.firebaseapp.com",
     databaseURL: "https://smart-heart.firebaseio.com",
@@ -15,7 +15,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-firebase.firestore().settings({ timestampsInSnapshots: true });
+// firebase.analytics();
+// firebase.firestore().settings({ timestampsInSnapshots: true });
 
 export default firebase;

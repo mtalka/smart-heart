@@ -1,19 +1,23 @@
 import React from "react";
 import ProfileListItem from "./ProfileListItem";
+import { connect } from "react-redux";
 
-function ProfileList() {
+function ProfileList(props: any) {
+    console.log(props.persons);
     return (
         <div>
-            <ProfileListItem />
-            <ProfileListItem />
-            <ProfileListItem />
-            <ProfileListItem />
-            <ProfileListItem />
-            <ProfileListItem />
-            <ProfileListItem />
-            <ProfileListItem />
+            {props.persons.map((p: any) => (
+                <ProfileListItem key={p.id} person={p} />
+            ))}
         </div>
     );
 }
 
-export default ProfileList;
+function mapStateToProps(state: any) {
+    const persons = state.persons.persons;
+    return {
+        persons
+    };
+}
+
+export default connect(mapStateToProps)(ProfileList);

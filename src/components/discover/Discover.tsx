@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Discover.scss";
 import ProfileList from "./ProfileList";
+import * as personActions from "../../redux/actions/personActions";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-function Discover() {
+function Discover(props: any) {
+    useEffect(() => {
+        props.actions.getPersons();
+    });
+
     const mockChips: string[] = [
         "Funny",
         // "Cute",
@@ -39,4 +46,10 @@ function Discover() {
     );
 }
 
-export default Discover;
+function mapDispatchToProps(dispatch: any) {
+    return {
+        actions: bindActionCreators(personActions, dispatch)
+    };
+}
+
+export default connect(null, mapDispatchToProps)(Discover);
