@@ -3,7 +3,6 @@ import ProfileListItem from "./ProfileListItem";
 import { connect } from "react-redux";
 
 function ProfileList(props: any) {
-    console.log(props.persons);
     return (
         <div>
             {props.persons.map((p: any) => (
