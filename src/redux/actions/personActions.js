@@ -4,8 +4,8 @@ export function getPersons() {
     return (dispatch, getState) => {
         const db = firebase.firestore();
         let persons = [];
-        db.collection("users")
-            .where("gender", "==", "female")
+        db.collection("profiles")
+            // .where("firstName", "==", "Markus")
             .get()
             .then(querySnapshot => {
                 querySnapshot.forEach(doc => {
@@ -18,5 +18,16 @@ export function getPersons() {
             });
 
         // Async callx
+    };
+}
+
+export function createPerson(person) {
+    return (dispatch, getState) => {
+        const db = firebase.firestore();
+        db.collection("profiles")
+            .add(person)
+            .then(() => {
+                dispatch({ type: "ADD_PERSON", person });
+            });
     };
 }
